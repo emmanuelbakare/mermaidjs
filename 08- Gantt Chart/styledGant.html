@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Interactive Mermaid Gant Chart Diagram</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <pre class="mermaid">
+            gantt
+            title sample Gantt Chart
+            section One
+                Task 11 - Goto Google: a11,2023-05-20, 2d
+                Task 12: a12, after a11,3d
+
+            section Two
+                Task 21: a21, 2023-05-24, 2d
+                Task 22: 2023-05-25, 2d
+                Task 23: 1d
+            Task 24: after a21, 4d
+
+            click a11 href "https://www.google.com/"
+            click a12 call msgAlert("You clicked the A12 timeline")
+        </pre>
+
+        <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+            const config = {
+                startOnLoad : true,
+                securityLevel: 'loose',
+            }
+            mermaid.initialize(config)
+        </script>
+
+        <script type="text/javascript">
+             function msgAlert(msg){
+                alert(msg)
+             }
+        </script>
+
+    </body>
+</html>

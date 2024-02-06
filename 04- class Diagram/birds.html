@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Interactive Mermaid Class Diagram</title>
+    </head>
+
+    <body>
+        <pre class="mermaid">
+            classDiagram
+
+
+                Bird<|-- Parrot
+                Bird<|-- Penguine
+                GoBack<|-- Bird
+
+                class Bird{
+                    +fly(): void
+                }
+
+                class Parrot{
+                    +color string
+                    +talk() void
+                }
+
+                class Penguine{
+                    +swim()
+                }
+
+                link GoBack "animal.html" "Go to Animal Class"
+
+            
+        </pre>
+
+        
+
+        
+
+        <script type="module">
+
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+            const config = {
+                startOnLoad : true,
+                securityLevel: 'loose',
+                
+            }
+
+            mermaid.initialize(config)
+
+        </script>
+
+         
+         
+    </body>
+</html>

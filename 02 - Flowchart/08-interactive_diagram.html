@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Interactive Mermaid Flowchart</title>
+    </head>
+
+    <body>
+        <pre class="mermaid">
+            flowchart
+                A([start click])-->B((github))-->C & D[youtube] -->F[(google.com)]
+
+                click A startclick "start clicking here"
+                click B "https://www.github.com" "Goto github" _blank
+                click F call clickmsg(Going to Google) "Click to browse Google.com"
+                click D call clickmsg(Going to Youtube) "Click to browse Youtube"
+                 
+        </pre>
+
+        <pre class="mermaid">
+            flowchart LR
+                
+                subgraph one
+                    A1-->A2
+                end
+
+                subgraph two
+                    direction LR
+                    B1-->B2 & B3
+                end
+
+                one-->two
+
+                click A1 call clickmsg('You clicked A1') "Clicking one"
+                click B1 call clickmsg('You clicked B1') "Clicking one"
+            
+                
+        </pre>
+
+        
+
+        <script type="module">
+
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+            const config = {
+                startOnLoad : true,
+                securityLevel: 'loose',
+                flowchart:{ 
+                useMaxWidth: true, 
+                htmlLabels: true, 
+                curve: 'stepAfter' 
+                },
+            }
+
+            mermaid.initialize(config)
+
+        </script>
+
+        <script>
+            function startclick(){
+                alert(' You Clicked Me - Welcoome 😏')
+            }
+
+            function clickmsg(msg){
+                alert(msg)
+            }
+
+        </script>
+         
+    </body>
+</html>

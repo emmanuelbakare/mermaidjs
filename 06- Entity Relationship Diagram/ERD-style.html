@@ -1,0 +1,78 @@
+<html >
+<head>
+     
+    <title>Interactive ERD - Customer Database</title>
+    <link rel="stylesheet" href="style.css" type="text/css" /> 
+</head>
+<body>
+     
+
+
+    <h3 class ="header1"> Entity Relationship Diagram </h3>
+    <pre class="mermaid">
+
+        erDiagram
+
+    CUSTOMER ||--o{ ORDER :places
+    CUSTOMER {
+        int id
+        string name
+        string email
+    }
+
+    ORDER ||--|{ LINE-ITEM : contains
+
+    ORDER {
+        int orderId
+        date datePlaced
+    }
+
+    LINE-ITEM {
+        int quantity
+        float price 
+    }
+    
+    CUSTOMER }|--|| PRODUCT:purchases
+    PRODUCT {
+        string name
+        float cost
+    }
+
+    CUSTOMER ||--|{ ADDRESS: uses
+    ADDRESS {
+        string street
+        string city
+    }
+
+     
+
+                
+          
+    </pre>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        const config = {
+            startOnLoad : true,
+            securityLevel: 'loose',
+            theme:'base',
+            themeVariables:{
+            "primaryColor":"#00ff00",
+            "tertiaryColor":"#aaff77",
+            "primaryTextColor":"#007700",
+            "lineColor":"#ff0000",
+            "background":"#ffeeee"
+            }  
+            
+            
+             
+        }
+        
+            mermaid.initialize(config)   
+    </script>
+     
+    
+    
+</body>
+</html>

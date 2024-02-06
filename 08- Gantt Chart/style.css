@@ -1,0 +1,11 @@
+
+#a11 {
+    stroke-width: 5px !important;
+    fill: lightgreen !important;
+}
+
+.sectionTitle {
+    font-size: 24px;
+    font-weight: bold;
+    fill:#4DAB9A
+}

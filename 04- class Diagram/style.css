@@ -1,0 +1,9 @@
+.dogNode > rect {
+    fill: #FFD700 !important ; 
+    stroke: #DAA520 !important; 
+    stroke-width: 5px !important;
+}
+
+.dogNode >line {
+    stroke: #ec062c !important; 
+  }

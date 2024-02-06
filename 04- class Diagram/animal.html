@@ -1,0 +1,74 @@
+<html >
+<head>
+     
+    <title>Interactive Class Diagram - Animal</title>
+</head>
+<body>
+    <pre class="mermaid">
+        classDiagram
+
+                Animal<|--Dog
+                Animal<|--Bird
+                
+
+                class Animal {
+                    +name: string
+                    +makeSound(): void
+                }
+                    
+                class Dog{
+                    +breed: string
+                    +bark(): void
+                }
+
+                class Bird{
+                    +fly(): void
+                }
+
+                %%link Bird "birds.html" "goto birds details"
+                %%click Bird href "birds.html" " go to birds details now"
+
+                callback Bird "birdDetail" "Detail class diagram on Bird"
+                click Dog call dogmsg('More Tips on Dogs coming right') "Tips on Dogs"
+                
+
+
+                 
+                 
+    </pre>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+        const config = {
+            startOnLoad : true,
+            securityLevel: 'loose',
+            
+            themeVariables: {
+                'primaryColor': '#Bc2a28',
+                'primaryTextColor': '#ff1100',
+                'primaryBorderColor': '#00ff00',
+                'lineColor': '#003300',
+                'secondaryColor': '#000',
+                'tertiaryColor': '#fff',
+                'mainBkg': '#ffeeee'
+            }
+        }
+
+        mermaid.initialize(config)   
+    </script>
+    <script  >
+        function birdDetail(){
+            // alert(' You Clicked Me - Welcome 😏')
+            window.open('birds.html', '_blank')
+        }
+
+        function dogmsg(msg){
+            alert(msg)
+        }
+
+    </script>
+    
+    
+</body>
+</html>

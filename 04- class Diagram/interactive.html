@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Interactive Mermaid Class Diagram</title>
+    </head>
+
+    <body>
+        <pre class="mermaid">
+            classDiagram
+                class Shape1
+                callback Shape1 "callbackFunction" "This is a tooltip for a callback"
+                class Shape2
+                click Shape2 call clickmsg(Nice Click) "This is a tooltip for a callback"
+        </pre>
+
+        
+
+        
+
+        <script type="module">
+
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+            const config = {
+                startOnLoad : true,
+                securityLevel: 'loose',
+                
+            }
+
+            mermaid.initialize(config)
+
+        </script>
+
+        <script>
+            function callbackFunction(){
+                alert(' You Clicked Me - Welcome 😏')
+            }
+
+            function clickmsg(msg){
+                alert(msg)
+            }
+
+        </script>
+         
+    </body>
+</html>

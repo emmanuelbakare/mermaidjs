@@ -1,0 +1,17 @@
+:::mermaid
+
+gantt
+    title sample Gantt Chart
+    dateFormat YY-MM-DD
+    axisFormat %y/%m/%d
+    tickInterval 1day
+
+    section One
+        Task 11: done, a11, 23-05-20,3d
+        Task 12: a12, after a11,3d
+    section Two
+        Task 21: crit,done,a21, 23-05-24, 2d
+        Task 22: crit, 23-05-25, 2d
+        Task 23: done, 2d
+        Task 24: active, after a12, 4d
+        
